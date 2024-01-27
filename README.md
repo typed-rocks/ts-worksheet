@@ -1,6 +1,8 @@
+<p align="center">
+<img src="https://github.com/typed-rocks/ts-worksheet/blob/main/pluginIcon.svg?raw=true" width=200/>
+</p>
 
-
-# TypeScript Worksheet
+<h1 align="center">TypeScript Worksheet - Live-Preview for VSCode and Jetbrains</h1>
 
 ## Overview
 
