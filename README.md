@@ -8,7 +8,7 @@
 
 Enhance your coding experience in Visual Studio Code and Jetbrains Products with the TypeScript and JavaScript Worksheet Plugin! This powerful tool allows you to see the results of your JavaScript or TypeScript code directly in the editor, much like the experience you get with a Kotlin Worksheet.
 
-![Worksheet GIF](https://github.com/typed-rocks/ts-worksheet/blob/main/result.gif?raw=true)
+![Worksheet GIF](https://github.com/typed-rocks/ts-worksheet/blob/main/intro.gif?raw=true)
 
 **ATTENTION**: This is still an early version of the plugin. If you find any issues, [Create an issue for it](https://github.com/typed-rocks/ts-worksheet/issues/new).
 
