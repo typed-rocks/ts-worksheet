@@ -1,13 +1,13 @@
 
+
 <div align="center">
 <h1 style="font-size:50px">TypeScript Worksheet</h1>
 
 
-<h3>Get the results of your&nbsp;<img src="https://raw.githubusercontent.com/typed-rocks/ts-worksheet/main/imgs/ts.png" width="30">&nbsp;or&nbsp;<img src="https://raw.githubusercontent.com/typed-rocks/ts-worksheet/main/imgs/js.png" width="30">&nbsp;code right in your IDE.</h3>
-  <div class="link-parent">
- <a class="download-link" role="button" href="https://marketplace.visualstudio.com/items?itemName=chwoerz.ts-worksheet">
-        <img src="https://raw.githubusercontent.com/typed-rocks/ts-worksheet/main/imgs/vscode.png" width="40"/>
-        <span>&nbsp;Download it</span>
+<h3>Get the results of your&nbsp;<img src="https://raw.githubusercontent.com/typed-rocks/ts-worksheet/main/imgs/ts.png" width="30">&nbsp;or&nbsp;<img src="https://raw.githubusercontent.com/typed-rocks/ts-worksheet/main/imgs/js.png" width="30">&nbsp;code right in your vscode.</h3>
+  <div >
+ <a  style= role="button" href="https://marketplace.visualstudio.com/items?itemName=chwoerz.ts-worksheet">
+        Download it
     </a>
     </div>
 <img src="https://raw.githubusercontent.com/typed-rocks/ts-worksheet/main/imgs/result.gif" width=500> 
