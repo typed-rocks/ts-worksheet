@@ -60,6 +60,16 @@
 </div>
 </div>
 <hr>
+   <div>
+        <div >
+            <h3>Copy value on click</h3>
+            <p>Just click on the inlay and get the value copied to clipboard.</p>
+        </div>
+        <div>
+            <img src="https://raw.githubusercontent.com/typed-rocks/ts-worksheet/main/imgs/realtime.png" width=300/>
+        </div>
+    </div>
+    <hr>
 
   <div>
         <div>
