@@ -63,7 +63,7 @@
 
   <div>
         <div>
-            <h3>Timetravel</h3>
+            <h3>Timetravel (only vscode)</h3>
             <p>Scrub through your code and see the exact order your code was executed. Especially useful for
                 understanding async code.</p>
         </div>
