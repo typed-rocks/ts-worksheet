@@ -13,7 +13,7 @@
         Download for Jetbrains
     </a>
     
-    </div>
+</div>
 <img src="https://raw.githubusercontent.com/typed-rocks/ts-worksheet/main/imgs/result.gif" width=500> 
 
   <h3>Compatible with the major runtimes...</h3>
