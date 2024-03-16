@@ -9,6 +9,8 @@
  <a  style= role="button" href="https://marketplace.visualstudio.com/items?itemName=chwoerz.ts-worksheet">
         Download for VSCode
     </a>
+    <br>
+    <br>
      <a  style= role="button" href="https://plugins.jetbrains.com/plugin/23660-typescript-worksheet/">
         Download for Jetbrains
     </a>
