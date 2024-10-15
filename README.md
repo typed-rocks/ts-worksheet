@@ -3,6 +3,7 @@
 <div align="center">
 <h1 style="font-size:50px">TypeScript Worksheet</h1>
 
+## [Usage](#usage) | [Features](#features)
 
 <h3>Get the results of your&nbsp;<img src="https://raw.githubusercontent.com/typed-rocks/ts-worksheet/main/imgs/ts.png" width="30">&nbsp;or&nbsp;<img src="https://raw.githubusercontent.com/typed-rocks/ts-worksheet/main/imgs/js.png" width="30">&nbsp;code right in your IDE</h3>
   <div >
@@ -145,11 +146,36 @@
 
 ## Usage
 
-After installation, follow these simple steps to use the plugin:
+After installation, you have multiple ways of running the plugin.
+
+### Configure it first
+
+You will now have a new icon in the your left gutter in VSCode which you can use to configure your plugin.
+
+<img src="./imgs/config.png" width=300>
+
+
+### Run at save:
 
 1. Open a JavaScript or TypeScript file.
 2. Add `//ts-worksheet` or `//ts-worksheet-with-variables` at the top of the file.
 3. Start coding and save the file when you are ready! You'll see the output of your code directly in the editor.
+
+The difference between `//ts-worksheet` and `//ts-worksheet-with-variables` is what the later shows the results of your variable initialization. So for example you will get the output of this line only with the later one:
+
+```typescript
+const hello = 'hi';
+```
+
+This will only show the results with the `with-variables` suffix.
+ 
+### Run from Command Palette:
+
+1. Open a JavaScript or TypeScript file.
+2. Open your Command Palette and run the command `Run TypeScript Worksheet` or `Run TypeScript Worksheet without variables`
+
+This will use the configuration to run the worksheet once in your current file so you don't run it by accident when you save your file like with the comment approach.
+
 
 **ATTENTION**: This is still an early version of the plugin. If you find any issues, [Create an issue for it](https://github.com/typed-rocks/ts-worksheet/issues/new).
 
