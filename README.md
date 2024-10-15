@@ -161,13 +161,11 @@ You will now have a new icon in the your left gutter in VSCode which you can use
 2. Add `//ts-worksheet` or `//ts-worksheet-with-variables` at the top of the file.
 3. Start coding and save the file when you are ready! You'll see the output of your code directly in the editor.
 
-The difference between `//ts-worksheet` and `//ts-worksheet-with-variables` is what the later shows the results of your variable initialization. So for example you will get the output of this line only with the later one:
+The difference between `//ts-worksheet` and `//ts-worksheet-with-variables` is the later shows also the results of your variable initialization. So for example you will get the output of this line only with the later one:
 
 ```typescript
 const hello = 'hi';
 ```
-
-This will only show the results with the `with-variables` suffix.
  
 ### Run from Command Palette:
 
