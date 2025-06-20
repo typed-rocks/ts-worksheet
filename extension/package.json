@@ -1,0 +1,129 @@
+{
+  "name": "ts-worksheet",
+  "displayName": "TypeScript Worksheet",
+  "description": "Live preview of your code right inside your editor",
+  "version": "0.8.27",
+  "publisher": "chwoerz",
+  "keywords": [
+    "worksheet",
+    "livereload",
+    "repl"
+  ],
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "icon": "icon.png",
+  "categories": [
+    "Visualization",
+    "Debuggers"
+  ],
+  "repository": {
+    "url": "https://github.com/typed-rocks/ts-worksheet"
+  },
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:javascript"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "id": "ts-worksheet.copyToClipboard",
+        "command": "ts-worksheet.copyToClipboard",
+        "title": "Copy to Clipboard"
+      },
+      {
+        "id": "ts-worksheet.run",
+        "command": "ts-worksheet.run",
+        "title": "Run TypeScript Worksheet"
+      },
+      {
+        "id": "ts-worksheet.run-no-variables",
+        "command": "ts-worksheet.run-no-variables",
+        "title": "Run TypeScript Worksheet without variables"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "ts-view-container",
+          "title": "TypeScript Worksheet",
+          "icon": "icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "ts-view-container": [
+        {
+          "id": "ts-view",
+          "type": "webview",
+          "name": "Timetravel"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "ts-worksheet",
+      "properties": {
+        "ts-worksheet.colors.expression": {
+          "markdownDescription": "The color of the evaluated expression as valid css color.",
+          "type": "string",
+          "default": "rgba(156, 156, 156, 0.6)"
+        },
+        "ts-worksheet.colors.log": {
+          "markdownDescription": "The color of the evaluated console calls as valid css color",
+          "type": "string",
+          "default": "rgba(53, 142, 241, 0.6)"
+        },
+        "ts-worksheet.colors.variable": {
+          "markdownDescription": "The color of the evaluated variable assignments as valid css color",
+          "type": "string",
+          "default": "rgba(241, 221, 53, 0.6)"
+        },
+        "ts-worksheet.colors.error": {
+          "markdownDescription": "The color of the evaluated errors as valid css color.`",
+          "type": "string",
+          "default": "rgba(224, 0, 0, 0.8)"
+        },
+        "ts-worksheet.run.always": {
+          "markdownDescription": "Should it run per default for the whole file if no `//?` is set?",
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  },
+  "scripts": {
+    "package-cli": "node bundle.js && cp -f ts-worksheet-cli.js ../idea/src/main/resources && cp -f ts-worksheet-cli.js ../../ts-worksheet-neovim/ts-worksheet-cli.js",
+    "win-package-cli": "node bundle.js && copy ts-worksheet-cli.js ..\\idea\\src\\main\\resources",
+    "vscode:prepublish": "npm run prerelease-test && npm run data-test",
+    "_precompile": "npm run package-cli",
+    "compile": "node minify.js",
+    "watch": "tsc -watch -p ./",
+    "prerelease-test": "node prerelease.js",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "vitest": "vitest",
+    "_test": "vscode-test",
+    "data-test": "npm run compile && tsx src/testfiles/data.spec.ts"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.83.0",
+    "@types/which": "^3.0.3",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "axios": "^1.6.7",
+    "esbuild": "0.20.1",
+    "eslint": "^8.56.0",
+    "prettier": "3.2.5",
+    "tsx": "4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "ts-morph": "^21.0.1",
+    "which": "^4.0.0"
+  }
+}

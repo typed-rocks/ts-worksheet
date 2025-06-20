@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider Example</title>
+  </head>
+  <style>
+    .bigtext {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: max-content auto;
+      justify-content: start;
+      justify-items: start;
+      column-gap: 10px;
+      row-gap: 10px;
+    }
+
+    input[type=checkbox] {
+      margin: 0 !important;
+    }
+    
+
+    .grid :nth-child(odd) {
+      font-weight: 800;
+    } 
+
+    .centerit {
+      display: grid;
+      justify-content: center;
+    }
+
+    .mt-5 {
+      margin-top: 2rem;
+    }
+
+    .mt-2 {
+      margin-top: 1rem;
+    }
+
+    hr {
+      width: 100%;
+    }
+  </style>
+  <body>
+    <p id="title">
+      Please run the typescript worksheet in your current editor by saving the file to show the timetraveling options.
+      <br />Add<code>//ts-worksheet-with-variables</code>
+      to the top of the file.
+    </p>
+    <div class="grid">
+      <label for="order">Show order</label><input type="checkbox" id="order" />
+
+      <label for="runtime">Runtime:</label>
+      <select name="runtime" onchange="onRuntimeChange()" id="runtime">
+        <option value="nodejs">nodeJS</option>
+        <option value="deno">Deno</option>
+        <option value="bun">Bun</option>
+      </select>
+    </div>
+    <b id="ipcInfo"
+      >Currently displaying results while the file is still running, is only supported by the nodejs runtime. If your
+      script has longrunning tasks like a server, it will never display values.
+    </b>
+
+    <div class="mt-5">
+      <label for="status"><b>Status</b> <span id="runstatus">Not running</span></label>
+    </div>
+    <button id="status" class="mt-2" onclick="stopRun()">Stop current Run</button>
+    <div id="box" style="display: flex; gap: 10px">
+      <input style="width: 100%" type="range" id="slider" min="0" max="0" value="0" />
+      <div class="centerit">
+        <span class="bigtext" id="currentMax"></span>
+        <hr />
+        <span class="bigtext" id="max"></span>
+      </div>
+    </div>
+    <script>
+      const runtime = document.getElementById('runtime');
+      runtime.value = 'nodejs';
+      const title = document.getElementById('title');
+      const slider = document.getElementById('slider');
+      const maxLabel = document.getElementById('max');
+      const box = document.getElementById('box');
+      const vscode = acquireVsCodeApi();
+      const order = document.getElementById('order');
+      const runstatus = document.getElementById('runstatus');
+      const statusButton = document.getElementById('status');
+      const ipcInfo = document.getElementById('ipcInfo');
+
+      onRuntimeChange();
+
+      function stopRun() {
+        vscode.postMessage({ command: 'stopRun' });
+      }
+
+      function showHide(bool, element) {
+        if (bool) {
+          element.style.display = 'block';
+        } else {
+          element.style.display = 'none';
+        }
+      }
+
+      function onRuntimeChange() {
+        showHide(runtime.value !== 'nodejs', ipcInfo);
+        vscode.postMessage({
+          command: 'updateRuntime',
+          value: runtime.value,
+        });
+      }
+
+      order.addEventListener('change', function () {
+        vscode.postMessage({
+          command: 'showOrder',
+          checked: order.checked,
+          value: slider.value,
+        });
+      });
+
+      window.addEventListener('message', (event) => {
+        const message = event.data; // The JSON data our extension sent
+        switch (message.command) {
+          case 'status': {
+            showHide(message.value === 'running', statusButton);
+            runstatus.innerText = message.value;
+            break;
+          }
+          case 'runtimes':
+            Array.from(runtime.options).forEach((option) => {
+              if (!message.value.includes(option.value)) {
+                option.setAttribute('disabled', true);
+                option.innerText = option.value + ' not available';
+              } else {
+                option.removeAttribute('disabled');
+              }
+            });
+            break;
+          case 'ran':
+            const max = message.value;
+            if (max === undefined) {
+              title.innerHTML =
+                'Please run the typescript worksheet in your current editor by saving the file to show the timetraveling options. <br> First add <code>//ts-worksheet-with-variables</code> to the top of the file and then save the file.';
+              box.style.display = 'none';
+              return;
+            }
+            box.style.display = 'flex';
+            title.innerText = 'Timetravel through the results in order';
+            maxLabel.innerText = message.value;
+            slider.max = message.value;
+            slider.value = message.value;
+            //currentMax.max=message.value;
+            // currentMax.value = message.value;
+            currentMax.innerText = message.value;
+            break;
+        }
+      });
+      currentMax.addEventListener('input', (e) => {
+        if (currentMax.value != slider.value) {
+          slider.value = currentMax.value;
+          vscode.postMessage({
+            command: 'sliderValue',
+            value: slider.value,
+          });
+        }
+      });
+      const debouncedFn = () => {
+        const currentMax = document.getElementById('currentMax');
+        //currentMax.value = slider.value;
+        currentMax.innerText = slider.value;
+        vscode.postMessage({
+          command: 'sliderValue',
+          value: slider.value,
+        });
+      };
+      slider.addEventListener('input', debouncedFn);
+    </script>
+  </body>
+</html>

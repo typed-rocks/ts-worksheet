@@ -1,0 +1,10 @@
+out
+dist
+node_modules
+.vscode-test/
+.DS_Store
+*.iml
+*.idea
+cli/src/*.js.map
+cli/node_modules
+cli/ts-worksheet-cli.js

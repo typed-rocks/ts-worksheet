@@ -1,0 +1,131 @@
+{
+  "data": [
+    { "stringed": "T = \"asdf\"", "type": "variable", "variable": "T", "called": "asdf", "line": 6 },
+    { "stringed": "f = ta", "type": "variable", "variable": "f", "called": "function", "line": 9 },
+    {
+      "stringed": "t = () => {   console.log(\"sdf\");   return 1; }",
+      "type": "variable",
+      "variable": "t",
+      "called": "function",
+      "line": 10
+    },
+    {
+      "stringed": "Promise.resolve('start but not start')",
+      "type": "expression",
+      "called": "Resolved Promise: start but not start",
+      "line": 5
+    },
+    {
+      "stringed": "await new Promise((r) => setTimeout(r, 0))",
+      "type": "expression",
+      "called": "Resolved Promise: __TS_WORKSHEET_UNDEFINED__",
+      "line": 18
+    },
+    { "type": "log", "called": ["as  df", 2], "line": 19 },
+    {
+      "stringed": "await new Promise((r) => setTimeout(r, 0))",
+      "type": "expression",
+      "called": "Resolved Promise: __TS_WORKSHEET_UNDEFINED__",
+      "line": 20
+    },
+    { "type": "log", "called": ["asdf", 2], "line": 21 },
+    { "type": "log", "called": ["asdf table"], "line": 22 },
+    { "type": "log", "called": [], "line": 23 },
+    {
+      "stringed": "spaces = \"ate     b\"",
+      "type": "variable",
+      "variable": "spaces",
+      "called": "ate     b",
+      "line": 25
+    },
+    { "type": "log", "called": ["sdf"], "line": 11 },
+    { "stringed": "t()", "type": "expression", "called": 1, "line": 26 },
+    { "stringed": "f()", "type": "expression", "called": "__TS_WORKSHEET_UNDEFINED__", "line": 27 },
+    { "type": "log", "called": ["sdf"], "line": 11 },
+    { "stringed": "t()", "type": "expression", "called": 1, "line": 28 },
+    { "type": "log", "called": ["afasf"], "line": 30 },
+    {
+      "stringed": "zeroTo10_ = Array.from({ length: 11 })",
+      "type": "variable",
+      "variable": "zeroTo10_",
+      "called": "[null,null,null,null,null,null,null,null,null,null,null]",
+      "line": 33
+    },
+    {
+      "stringed": "zeroTo10_",
+      "type": "expression",
+      "called": "[null,null,null,null,null,null,null,null,null,null,null]",
+      "line": 35
+    },
+    {
+      "stringed": "zeroTo10_.map((_, i) => i)",
+      "type": "expression",
+      "called": "[0,1,2,3,4,5,6,7,8,9,10]",
+      "line": 37
+    },
+    { "type": "log", "called": ["i: 1"], "line": 40 },
+    { "stringed": "i++", "type": "expression", "called": 1, "line": 39 },
+    { "type": "log", "called": ["i: 2"], "line": 40 },
+    { "stringed": "i++", "type": "expression", "called": 2, "line": 39 },
+    { "type": "log", "called": ["i: 3"], "line": 40 },
+    { "stringed": "i++", "type": "expression", "called": 3, "line": 39 },
+    { "type": "log", "called": ["i: 4"], "line": 40 },
+    { "stringed": "i++", "type": "expression", "called": 4, "line": 39 },
+    { "type": "log", "called": ["i: 5"], "line": 40 },
+    { "stringed": "i++", "type": "expression", "called": 5, "line": 39 },
+    { "type": "log", "called": ["i: 6"], "line": 40 },
+    { "stringed": "i++", "type": "expression", "called": 6, "line": 39 },
+    { "type": "log", "called": ["i: 7"], "line": 40 },
+    { "stringed": "i++", "type": "expression", "called": 7, "line": 39 },
+    { "type": "log", "called": ["i: 8"], "line": 40 },
+    { "stringed": "i++", "type": "expression", "called": 8, "line": 39 },
+    { "type": "log", "called": ["i: 9"], "line": 40 },
+    { "stringed": "i++", "type": "expression", "called": 9, "line": 39 },
+    {
+      "stringed": "person_ = new Person_(\"Christian Wörz\")",
+      "type": "variable",
+      "variable": "person_",
+      "called": "{\"name\":\"Christian Wörz\"}",
+      "line": 52
+    },
+    { "stringed": "person_.name", "type": "expression", "called": "Christian Wörz", "line": 54 },
+    { "type": "log", "called": ["called with Christian Wörz"], "line": 47 },
+    { "stringed": "person_.shoutHello()", "type": "expression", "called": "HELLO CHRISTIAN WÖRZ", "line": 56 },
+    { "stringed": "person_.name = \"New Name\"", "type": "expression", "called": "New Name", "line": 58 },
+    { "type": "log", "called": ["called with New Name"], "line": 47 },
+    { "stringed": "person_.shoutHello()", "type": "expression", "called": "HELLO NEW NAME", "line": 59 },
+    {
+      "stringed": "url = \"http://google.com\"",
+      "type": "variable",
+      "variable": "url",
+      "called": "http://google.com",
+      "line": 61
+    },
+    { "stringed": "a = url", "type": "variable", "variable": "a", "called": "http://google.com", "line": 63 },
+    { "stringed": "b = \"2\"", "type": "variable", "variable": "b", "called": "2", "line": 64 },
+    { "stringed": "a", "type": "expression", "called": "http://google.com", "line": 65 },
+    {
+      "stringed": "ASDF = { a: \"asdf\", b: 2 }",
+      "type": "variable",
+      "variable": "ASDF",
+      "called": "{\"a\":\"asdf\",\"b\":2}",
+      "line": 69
+    },
+    { "stringed": "Promise.resolve('asdf')", "type": "expression", "called": "Resolved Promise: asdf", "line": 67 },
+    {
+      "stringed": "Promise.resolve({status: 200}).then((r) => r.status)",
+      "type": "expression",
+      "called": "Resolved Promise: 200",
+      "line": 71
+    },
+    { "type": "log", "called": [200, "b"], "line": 73 },
+    { "type": "log", "called": ["Await status: 200"], "line": 76 },
+    {
+      "type": "error",
+      "stringed": "new Error('test')",
+      "called": "Error: message: test, object: \"Error: test\\n    at Object.called (/Users/wrz/IdeaProjects/ts-show/extension/src/.ws.testinput.ts.ts:84:103)\\n    at tsWorksheetWatch (/Users/wrz/IdeaProjects/ts-show/extension/src/.ws.testinput.ts.ts:146:21)\\n    at __tsrun (/Users/wrz/IdeaProjects/ts-show/extension/src/.ws.testinput.ts.ts:84:1)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\"",
+      "line": 81
+    }
+  ],
+  "hasInstalledTsx": false
+}
